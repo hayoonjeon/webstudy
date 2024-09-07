@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>block/inLine</title>
+<style type="text/css">
+	/* css 에서 id는 # ,  class는 .  */
+	/* mycontainer1 안 존재하는 div들 */
+	.mycontainer1 div{
+		float: left;
+		width: 30%;
+		padding: 5px;
+	}
+	.mycontainer1{
+		width: 100%;
+		overflow:auto;
+	}
+	
+	.mycontainer2 div{
+		display: inline-block;
+		width: 30%;
+		padding: 5px;
+	}
+	.mycontainer3 {
+		display: flex;
+	}
+	.mycontainer4 {
+		display: grid;
+		grid-template-columns: 30% 30% 30%;
+	}
+</style>
+</head>
+<body>
+<!--
+	* block level element : 행 전체의 너비를 차지 한다. 항상 새 줄에서 시작한다.
+	              <div>, <p>, <h1>~<h6>, <table>, <ul>, <hr>, <form>
+	              
+	* inLine element : 필요한 만큼만 너비를 차지한다.
+	                  <span>, <img>, <a>, <input>, <button>, <label>               
+  -->
+  <!-- div : 다른 요소(태그)들을 포함 하는 컨테이너 역할을 한다.
+  			 또는 영역을 나누는 역할을 한다.    -->
+  <div style="background-color: orange;">Hello World</div>
+  <span style="background-color: green">Hello World</span>
+  <hr>
+  <div style="background-color: lightgray; width: 400px; margin: 0px auto; padding: 20px">
+  	<h2>London</h2>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  </div>
+  <div style="background-color: tomato; ">
+  	<h2>London</h2>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  </div>
+  
+  <div style="background-color: pink">
+  	<h2>London</h2>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  	<p>London is the capital city of England.
+  	London is the capital city of England.
+  	London is the capital city of England.</p>
+  </div>
+  <hr>
+  
+  <h2>Multiple DIV Element1 - float</h2>
+  <div class="mycontainer1">
+      <div style="background-color: #fff4a3">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #ffc0c7">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #d9eee1">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+  </div>
+  <hr>
+  <h2>Multiple DIV Element2 - display</h2>
+  <div class="mycontainer2">
+      <div style="background-color: #fff4a3">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #ffc0c7">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #d9eee1">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+  </div>
+  <hr>
+  <h2>Multiple DIV Element3 - flexBox</h2>
+  <div class="mycontainer3">
+      <div style="background-color: #fff4a3">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #ffc0c7">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #d9eee1">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+  </div>
+  <hr>
+  <h2>Multiple DIV Element4 - grid</h2>
+  <div class="mycontainer4">
+      <div style="background-color: #fff4a3">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #ffc0c7">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+      <div style="background-color: #d9eee1">
+      	<h2>London</h2>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+		  	<p>London is the capital city of England.
+		  	London is the capital city of England.
+		  	London is the capital city of England.</p>
+      </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

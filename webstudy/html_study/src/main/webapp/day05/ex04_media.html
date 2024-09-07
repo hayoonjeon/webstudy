@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멀티미디어 삽입 : object, embed </title>
+</head>
+<body>
+<!--
+    <object width="너비" height="높이" data="파일"></object>
+    <audio src="경로"></audio>
+
+    <embed src="경로" width="너비" height="높이">
+  	<video src="경로"></video>
+	controls : 컨틀로러 보이게
+	autoplay : 자동 실행  	
+  	loop     : 반복 실행
+  	muted    : 음소거 , autoplay 할때 같이 사용해야 됨
+  -->
+ 
+ <video src="../medias/flower.mp4" controls></video>
+ <hr>
+ 
+ <video src="../medias/salad.mp4" controls autoplay muted width="600px"></video>
+ <hr>
+ 
+ <video width="600px" controls autoplay muted>
+ 	<source src="../medias/flower.mp4">
+ </video>
+ <hr>
+ 
+ <audio src="../medias/spring.mp3" controls></audio>
+ <hr>
+ 
+ <!-- 자동 실행 안됨 -->
+ <audio src="../medias/spring.mp3" controls autoplay></audio>
+ <hr>
+ 
+ <audio controls>
+ 	<source src="../medias/spring.mp3">
+ </audio>
+ <hr>
+ 
+ <!-- YouTube : iframe -->
+ <iframe width="500px" height="315px" 
+ 	src="https://www.youtube.com/embed/E4PCwQHVoIU?si=mbV-RmD-MjgLG6_D"></iframe><br>
+ 
+   <!-- 자동재생 : ?autoplay=1&mute=1  -->
+  <iframe width="420" height="315" 
+  src="https://www.youtube.com/embed/E4PCwQHVoIU?autoplay=1&mute=1&si=mbV-RmD-MjgLG6_D"></iframe><br>
+  
+  <!-- 무한반복 : loop=1 -->
+  <iframe width="420" height="315" 
+  src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1"></iframe><br>
+ 
+</body>
+</html>

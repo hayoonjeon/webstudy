@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a 링크 색</title>
+<style type="text/css">
+	span{font-size: 20px;}
+	a:link {color: black;}
+	a:visited {color: black;}
+	a:active {color: skyblue;}
+	a:hover {background-color: lightgray;}
+	a{text-decoration: none;}
+</style>
+</head>
+<body>
+	<!--
+		* 한번도 방문한 적이 없는 사이트나 문서    : 밑줄, blue
+		* 한번이라도 방문한 적이 있는 사이트나 문서 : 밑줄, purple
+		* 이동하기 위해서 마우스로 눌렀을 때      : 밑줄, red 
+		
+		a:link     => 일반적인 링크 속성 지정(변경)   
+		a:visited  => 방문한 적이 있는 링크 속성 지정(변경)   
+		a:active   => 마우스로 눌렀을 때  속성 지정(변경)
+		a:hover    => 마우스가 해당 영역에 올렸을 때 속성 지정(변경)
+		
+		text-decoration:none;  (링크 밑줄 삭제)
+	  -->
+	<span><a href="./ex02_color.html">문서2</a></span>
+	<span><a href="./ex03_css.html">문서3</a></span>
+</body>
+</html>

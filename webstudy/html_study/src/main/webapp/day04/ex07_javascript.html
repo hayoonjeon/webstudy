@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript</title>
+<script type="text/javascript">
+	function setMsg() {
+		document.getElementById("memo3").innerHTML = Date();
+	}
+</script>
+</head>
+<body>
+<!--
+	javascript 는 body 태그, head 태그 모두 사용 가능
+	태그 중 onXXXX() 이런 속성은  javascript의 function 호출하는 것 
+	function() 은 메서드와 같이 기능적인 역할을 한다. 
+  -->
+  <h2>자바스크립트 사용</h2>
+  <h2 id="memo">Memo</h2>
+  <script type="text/javascript">
+  	// id를 가진 요소를 선택 하는 방법 : document.getElementById("memo")
+  	// innerHTML :  HTML 요소의 내용을 읽거나 수정할때 사용하는 속성
+  	// innerHTML = "내용" => set기능 : 내용을 받아서 수정 
+  	//  변수 = innerHTML => get기능 : innerHTML의 내용을 변수에 저장
+  	document.getElementById("memo").innerHTML = "Hello JavaScript";
+  	// var k = document.getElementById("memo").innerHTML;
+  </script>
+  <hr>
+  
+  <h2 id="memo2">Memo</h2>
+  <!-- 쌍따옴표 안에 쌍따옴표는 사용 불가 (홑따옴표 사용 가능) -->   
+  <button onclick="document.getElementById('memo2').innerHTML = Date()">눌러주세요-1</button>
+  <hr>
+  
+  <h2 id="memo3">Memo</h2>
+  <!-- 자바스크립트 함수 호출-->   
+  <button onclick="setMsg()">눌러주세요-up</button>
+  <hr>
+  
+  <h2 id="memo4">Memo</h2>
+  <!-- 자바스크립트 함수 호출-->   
+  <button onclick="setMsg2()">눌러주세요-down</button>
+  <hr>
+  
+  <!-- 스타일 변경 -->
+  <h2 id="memo5">한국 ICT 인재 개발원</h2>
+  <!-- 자바스크립트 함수 호출-->   
+  <button onclick="setMsg3()">스타일변경</button>
+  <button onclick="setMsg4()">원래대로</button>
+  <hr>
+  
+  <!-- src 속성 변경 -->
+  <img id="myimg" alt="" src="../images/pic_bulboff.gif">
+  <button onclick="setMsg5()">On</button>
+  <button onclick="setMsg6()">Off</button>
+  <script type="text/javascript">
+  	function setMsg2() {
+  		document.getElementById('memo4').innerHTML = "Welcome JS";
+	}
+  	function setMsg3() {
+  		document.getElementById('memo5').style.fontSize="50px";
+  		document.getElementById('memo5').style.color="red";
+  		document.getElementById('memo5').style.backgroundColor="yellow";
+	}
+  	function setMsg4() {
+  		document.getElementById('memo5').style="none";
+	}
+  	function setMsg5() {
+  		document.getElementById('myimg').src="../images/pic_bulbon.gif";
+	}
+  	function setMsg6() {
+  		document.getElementById('myimg').src="../images/pic_bulboff.gif";
+	}
+  </script>
+</body>
+</html>
+
+
+
+

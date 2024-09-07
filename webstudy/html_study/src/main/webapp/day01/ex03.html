@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML style 속성(attribute)</title>
+</head>
+<body>
+	<!-- 
+	<시작태그 속성 = "값" 속성="값" 속성="값">
+	<시작태그 style="속성:값; 속성:값; 속성:값 ">
+	
+	HTML에서는 속성을 attribute, CSS에서는 property 라고 부른다
+	
+	style 속성 : 글자색(color)라고 부르며, backgroung - color = 배경색
+			    fonts - font-weigth(굵게), font-family(글꼴), font-size(글자 크기)
+			    font-style(스타일) = 글씨 굵게, 밑줄 등등
+			    text-align(정렬), => 인라인 써도 의미 없음.
+			    text-decoration : 글자 꾸미기
+			    				  none, underline, overline, line-through 
+ -->
+	<h1 style="background-color: blue; color: white;">한국ICT인재개발원</h1>
+	<p style="color: red; font-size: 20px">한국ICT인재개발원</p>
+	<span style="background-color: blue; color: white; font-size: 20px">한국ICT인재개발원</span>
+	<hr>
+
+	<p style="font-size: 20px;">한국ICT인재개발원</p>
+	<p style="font-size: 20px; font-weight: bold">한국ICT인재개발원</p>
+	<p style="font-size: 20px;">한국ICT인재개발원</p>
+	<p style="font-size: 20px; font-style: italic">한국ICT인재개발원</p>
+	<hr>
+	<!-- 글자의 가운데 정렬은  text-align(정렬) -->
+	<p style="text-align: center;">한국ICT인재개발원</p>
+	<p style="text-align: right;">한국ICT인재개발원</p>
+	<span style="text-align: center;">한국ICT인재개발원</span>
+	<div style="text-align: center;">
+		<span>한국ICT인재개발원</span>
+	</div>
+
+	<span style="display :block; text-align: center;">한국ICT인재개발원</span>
+
+	<p>한국ICT인재개발원</p>
+	<hr>
+
+	<p style="text-decoration: underline">한국ICT인재개발원</p>
+	<p style="text-decoration: overline"><a href="#">한국ICT인재개발원</a></p>
+	<p><a href="#" style="text-decoration: none" >한국ICT인재개발원</a></p>
+	<p style="text-decoration: line-through">한국ICT인재개발원</p>
+	<hr>
+
+
+</body>
+</html>

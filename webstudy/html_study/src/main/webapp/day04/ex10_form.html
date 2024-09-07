@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form : 입력양식</title>
+</head>
+<body>
+<!--
+	form : 사용자들에게 정보를 입력 받아 서버에게 정보를 전달하는 역할을 한다.
+	<form [action=""] [method=""] [enctype=""]>
+	1. action = 정보가 전달될 서버 페이지의 경로 
+	2. method = 정보를 전달하는 방식
+	          - get(생략) : 정보를 head 에 담아서 보낸다.
+	                       적은용량, 주소창에 보내는 정보 보인다. 보안에 취약, 빠르다 (검색)
+	          - post : 정보를 body에 담아서 보낸다.
+	                   대용량, 주소창에 정보가 보이지 않는다. get보다는 느리다.  
+	3. enctype => 평소에는 사용 안함,  파일 업로드할 때 사용 
+	4. form elements 태그들 : input, label, select, textarea, fieldset, legend
+	5. input 태그의 type 속성들
+	    text, button, radio, checkbox, file, hidden, number, password, reset
+	    submit, tel, color, date, email, time, url, week, range, search ....
+	    
+	input type 속성 중 name 속성은 서버에 전달할때 사용되는 name
+	input type 속성 중 value 속성 서버에 전달할때 사용되는 value
+	데이터 전달될 때  ~~~~~~?name=value&name=value&name=value     
+	
+	checkbox, select 경우 같은이름이 여러개가 지정될 경우 , 서버에서는 배열로 받는다.
+	radio, checkbox => checked 속성으로 선택된 요소를 알 수 있다.
+	select : selected 속성으로 선택된 요소를 알 수 있다.
+	         size 속성은 화면에 표시되는 갯수
+	         multiple 속성은 ctrl 키를 이용하면 동시에 여러개 선택 가능   
+	reset : form 태그 안에 입력한 정보를 초기화 한다. (버튼 형태)
+	submit : form 태그 안에 입력한 정보를 
+	         action 이 지정한 서버 페이지로 정보를 전달(버튼 형태)
+	         
+    disabled : 커서가 들어가지 않아서 입력할 수 없다.	         
+    readonly : 오직 읽기만 가능, 수정 된다.
+    placehoder : 힌트 표시
+    required : 반드시 입력해야 되는 태그에 붙이는 속성
+    pattern : [0-9] (숫자의미) {3} (자리수) [A-Za-z](알파벳)
+              [0-9]{3}-[0-9]{4}-[0-9]{4} 
+              
+    form 태그 속성에 autocomplete="on|off" (자동완성기능)
+    form 요소를 그룹으로 묶을 수 있는 <fieldset> <legend>   
+           
+  -->
+  <form action="#" method="get" autocomplete="off">
+    <fieldset>
+    	<legend>로그인</legend>
+    	<!-- placeholder : 힌트,  required : 필수 정보 -->
+    	<label>아이디 : <input type="text" placeholder="아이디입력하세요" name="id" required></label>
+    	
+    	<!-- label for="값"을 input type id="값" 이 같은 연결 -->
+    	<label for="user_id">패스워드 : </label>
+    	
+    	<!-- password : 입력내용이 점으로 표시된다. --> 
+    	<input type="password" id="user_id" placeholder="패스워드입력하세요" name="pw" required>
+    </fieldset>
+    <fieldset>
+    	<legend>회원가입</legend>
+    	<!-- readonly, disabled => 표시만 된다. 수정 불가 , 
+    		readonly = 서버에 이름과 값이 전달된다. 
+    		disabled = 서버에 이름과 값이 전달 되지 않는다.
+    	  -->
+    	<label>이름 : <input type="text" name="u_name" value="홍길동" readonly> </label>
+    	<label>나이 : <input type="number" name="u_age" value="27"  disabled> </label>
+    	
+    	<!-- number는 숫자만 입력가능 -->
+    	<label>나이 : <input type="number" > </label><br>
+    	
+    	<!-- size : 필드의 길이 , maxlength : 최대 글자 수 -->
+    	<!-- number : min(최소값), max(최대값)  -->
+    	<label>아이디2: <input type="text" size="10" maxlength="5"  > </label>
+    	<label>패스워드2 : <input type="password"  size="10" maxlength="5"> </label>
+    	<label>나이2 : <input type="number" size="10"  name="uage" max=19 min=10> </label>
+		<br>
+		<!-- number는 maxlength 안됨 , pattern="[0-9]{6}  -->
+    	<label>생년월일 <input type="number" size="10" maxlength="6"  > </label>
+    	<label>생년월일 <input type="text" size="10" pattern="[0-9]{6}"  > </label>
+    	<br>
+    </fieldset>
+    <p><input type="reset" value="취소"></p>
+    <p><input type="submit" value="보내기"></p>
+  </form>
+  <hr>
+  
+  <form action="#">
+	<fieldset>
+		<legend> 상품 선택</legend>
+		<p><b>주문할 상품을 선택해 주세요</b></p>
+		<ul>
+			<li><label><input type="checkbox" name="prod" value="s_3" checked>선물용 3kg</label></li>
+			<li><label><input type="checkbox" name="prod" value="s_5">선물용 5kg</label></li>
+			<li><label><input type="checkbox" name="prod" value="f_3">가정용 3kg</label></li>
+			<li><label><input type="checkbox" name="prod" value="f_5">가정용 5kg</label></li>
+		</ul>
+		<p><b>포장 선택</b></p>
+		<ul>
+			<li><label><input type="radio" name="gift" value="y" checked>선물 포장</label></li>
+			<li><label><input type="radio" name="gift" value="n">선물 포장 안함</label></li>
+		</ul>
+		<p><b>주소를 선택해 주세요</b>
+		   <select name="addr">
+		   		<option>::선택하세요::</option>
+		   		<!-- value를 입력하지않으면 텍스트가 value가 된다. -->
+		   		<option value="1">집</option>
+		   		<option value="2">회사</option>
+		   		<option value="3">회사2</option>
+		   		<option value="4">누나집</option>
+		   </select>
+		</p>
+		<p><b>상품를 선택해 주세요</b>
+		   <select name="prod3" multiple size="6">
+		   		<!-- value를 입력하지않으면 텍스트가 value가 된다. -->
+		   		<option value="1">선물용 3kg</option>
+		   		<option value="2">선물용 5kg</option>
+		   		<option value="3">선물용 8kg</option>
+		   		<option value="4">가정용 3kg</option>
+		   		<option value="5">가정용 5kg</option>
+		   		<option value="6">가정용 8kg</option>
+		   </select>
+		</p>
+		
+	</fieldset> 
+	<p><input type="reset" value="취소"></p>
+    <p><input type="submit" value="보내기"></p> 
+  </form>
+  <hr>
+  
+  <form action="#" method="post" enctype="">
+  	<fieldset>
+  		<legend>input type 나머지 속성</legend>
+  		<ul>
+  			<!-- 파일 업로드 할때 사용 반드시 form 속성 중 enctype="XXX" 사용, method="post" -->
+  			<li><label>업로드 : <input type="file" name="file"> </label> </li>
+  			<li><label>날짜 1 : <input type="date" name="date1"> </label> </li>
+  			<li><label>날짜 2 : <input type="month" name="date2"> </label> </li>
+  			<li><label>날짜 3 : <input type="week" name="date3"> </label> </li>
+  			<li><label>시간1 : <input type="time" name="time1"> </label> </li>
+  			<li><label>시간2 : <input type="datetime-local" name="time2"> </label> </li>
+  			
+  			<li><label>날짜 : <input type="date" min="2024-05-02" max="2024-05-15"> </label> </li>
+  			<!-- 범위에 값을 나타내려면 자바스크립트 사용  -->
+  			<li><label>범위 : <input type="range" min="0" max="100" step="1" value="20"
+					oninput="document.getElementById('ran_value').innerHTML = this.value"						  				
+  			><span id="ran_value">20</span> </label> </li>
+  		</ul>
+  	</fieldset>
+  	<p><input type="reset" value="취소"></p>
+    <p><input type="submit" value="보내기"></p> 
+  </form>
+  <form action="#" method="get" autocomplete="off">
+  	<label>아이디 : <input type="text" size="10" name="uid" required> </label>
+  	<label>비밀번호 : <input type="password" size="10" name="upw"  required> </label>
+  	<input type="image" src="../images/login.png"><br>
+  	
+  	<!-- 화면에 보이지 않으면 이름과 값이 서버로 넘길때 사용  -->
+    <input type="hidden" name="cPage" value="5">
+  	
+  	<input type="button" value="로그인" onclick="alert('1')">
+  	<button onclick="alert('1')">로그인</button>
+  	<input type="submit" value="로그인">
+  </form>
+</body>
+</html>
+
+
+
+
+
+
