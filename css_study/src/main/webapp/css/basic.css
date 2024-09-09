@@ -1,0 +1,9 @@
+@charset "UTF-8";
+p{
+	color: white;
+	background-color: aqua
+}
+span {
+	background-color: tomato;
+	color: white;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<style type="text/css">
+	.a{ color : tomato;}
+	#b{ color : blue;}
+	
+	/* id와 클래그 겹친 경우 */
+	#d { background-color: skyblue; font-size: 100px;}
+	.c { background-color: red; color: white;}
+</style>
+</head>
+<body>
+<!--
+	선택자 : 
+	1) * => 전체 선택자 - 모든 요소 선택
+       * { 속성1: 속성값1; 속성2: 속성값2;  }
+       웹 브라우저의 기본 스타일을 초기화 할때 자주 사용
+       * {magin:0; padding : 0; }
+    2) 태그 선택자 : 해당 태그를 선택자로 활용
+                   모든 해당 태그들이 스타일을 적용 받는다.
+       p { 속성 : 속성값 ;}
+    3) 클래스 => class 속성을 가진 요소 모두 선택 (여러개 요소 선택) 
+       .클래스이름 {속성 : 속성값;}  
+       
+    4) 아이디 => id 속성을 가진 요소 선택 (하나의 요소 선택)
+       #아이디이름 {속성 : 속성값;}
+    주의사항) 선택자가 겹치는 경우, 기본적으로 나중에 작성된 스타일이 적용
+            선택자 우선 순위 :  !important > 인라인 > 아이디 > 클래스 > 태그      
+  -->
+  	<h1 id="d" class="c" style="background-color: lightgray" >Hello</h1>
+  	<p class="a">한국 ICT 인재 개발원</p>
+  	<p class="a">한국 ICT 인재 개발원</p>
+  	<p id="b">한국 ICT 인재 개발원</p>
+  	<p>한국 ICT 인재 개발원</p>
+  	<p class="a">한국 ICT 인재 개발원</p>
+  	<p class="a">한국 ICT 인재 개발원</p>
+</body>
+</html>
+
+
+
+
