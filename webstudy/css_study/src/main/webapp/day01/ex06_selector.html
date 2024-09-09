@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형제요소의 순서를 이용해서 선택</title>
+<style type="text/css">
+/* 순서 : 형제 요소의 순서 => 요소:nth-of-type(index=1부터)
+         형제 요소의 순서 => 요소:first-of-type, :last-of-type  
+         형제 요소의 순서 => 요소:first-child, :last-child  
+*/
+/* p 태그의 두번째 요소는 모두 선택 */
+ p:nth-of-type(2) {color: red;}
+ 
+ /*p태그의 첫번재 요소와 마지막 요소  */ 
+ p:first-of-type {color: blue;}
+ p:last-of-type {color: green;}
+ 
+ /*  부모요소의 첫번째 자식요소,  부모요소의 마지막자식요소*/
+ p:first-child {background-color: lightgray}
+ p:last-child {background-color: lightgray}
+ 
+ /* 보통 first-child, last-child 부모를 기준으로  */
+ .exam p:first-child { background-color: tomato;}
+ .exam p:last-child { background-color: tomato;}
+</style>
+</head>
+<body>
+	<p>첫번째 문단</p>
+	<p>두번째 문단</p>
+	<div class="exam">
+		<p>안 첫번째 문단</p>
+		<p>안 두번째 문단</p>
+		<p>안 세번째 문단</p>
+	</div>
+	<p>세번째 문단</p>
+	<p>네번째 문단</p>
+	<p>다섯번째 문단</p>
+</body>
+</html>
